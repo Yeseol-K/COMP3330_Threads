@@ -14,7 +14,7 @@ export default function NavBar({ className }: { className?: string }) {
       <Link href="/search" className="hover:bg-neutral-100 dark:hover:bg-neutral-900 flex justify-center items-center h-14 w-20 rounded-md transition-all fill-none stroke-neutral-600 text-neutral-600">
         <SearchIcon />
       </Link>
-      <Link href="/create" className="hover:bg-neutral-100 dark:hover:bg-neutral-900 flex justify-center items-center h-14 w-20 rounded-md transition-all fill-none stroke-neutral-600">
+      <Link href="/create-post" className="hover:bg-neutral-100 dark:hover:bg-neutral-900 flex justify-center items-center h-14 w-20 rounded-md transition-all fill-none stroke-neutral-600">
         <CreateIcon />
       </Link>
       <Link href="/activity" className="hover:bg-neutral-100 dark:hover:bg-neutral-900 flex justify-center items-center h-14 w-20 rounded-md transition-all fill-none stroke-neutral-600">

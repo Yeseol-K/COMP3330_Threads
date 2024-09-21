@@ -5,4 +5,10 @@ const nextConfig = {
   },
 };
 
+// module.exports = {
+//   experimental: {
+//     serverActions: true,
+//   },
+// };
+
 export default nextConfig;
