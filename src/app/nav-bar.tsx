@@ -20,7 +20,7 @@ export default function NavBar({ className }: { className?: string }) {
       <Link href="/activity" className="hover:bg-neutral-100 dark:hover:bg-neutral-900 flex justify-center items-center h-14 w-20 rounded-md transition-all fill-none stroke-neutral-600">
         <ActivityIcon />
       </Link>
-      <Link href="/jane_doe" className="hover:bg-neutral-100 dark:hover:bg-neutral-900 flex justify-center items-center h-14 w-20 rounded-md transition-all fill-none stroke-neutral-600">
+      <Link href="/sam" className="hover:bg-neutral-100 dark:hover:bg-neutral-900 flex justify-center items-center h-14 w-20 rounded-md transition-all fill-none stroke-neutral-600">
         <ProfileIcon />
       </Link>
     </nav>

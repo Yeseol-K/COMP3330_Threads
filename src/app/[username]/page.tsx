@@ -10,12 +10,12 @@ import { type UserResult as User } from "@/app/realDatabase";
 
 export default async function Profile({ params }: { params: { username: string } }) {
   // const user = fakeDatabase.getUser(params.username);
-  const user = await getUser().execute();
+  const user = await getUser(params.username).execute();
   if (!user) {
     notFound();
   }
   // const posts = fakeDatabase.getPostsForUser(user.username);
-  const posts = await getPostsByUser().execute();
+  const posts = await getPostsByUser(params.username).execute();
   return (
     <>
       {/* user profile */}
