@@ -1,11 +1,16 @@
-// import { Post } from "../../fakeDatabase";
-export default function Post({ params }: { params: { id: string } }) {
+import FeedPost from "@/app/components/feed-post";
+import { getPosts } from "@/app/realDatabase";
+import NotFound from "./not-found";
+
+export default async function Post({ params }: { params: { id: string } }) {
+  const allPosts = await getPosts();
+  const matchedPost = allPosts.find((p) => p.posts.id === parseInt(params.id));
+  if (!matchedPost) {
+    return <NotFound />;
+  }
   return (
-    <main className="text-center mt-10">
-      <div>
-        <h1>Post {params.id}</h1>
-        <p>TODO: display post</p>
-      </div>
-    </main>
+    <div className="flex flex-col divide-y" style={{ height: 3000 }}>
+      <FeedPost key={matchedPost.posts.id} post={matchedPost} />
+    </div>
   );
 }

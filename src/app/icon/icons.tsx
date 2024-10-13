@@ -1,5 +1,5 @@
 //svg is more useful to modify the CSS class
-import { twMerge } from "tailwind-merge";
+// import { twMerge } from "tailwind-merge";
 
 export const HomeIcon = () => {
   return (

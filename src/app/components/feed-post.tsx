@@ -19,14 +19,14 @@ export default function FeedPost({ post }: { post: Post }) {
   }
 
   return (
-    <article className="flex flex-col gap-4 py-4 relative">
+    <article className="flex flex-col gap-4 py-4 relative ">
       <div className="flex gap-4 items-start">
         <Link href={`/${post.users.username}`}>
-          <div className="rounded-full h-10 w-10 overflow-hidden relative">
+          <div className="rounded-full h-10 w-10 overflow-hidden relative ">
             <Image className="object-cover" src={post.users.avatar} alt={post.users.username} priority={true} fill={true} />
           </div>
         </Link>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-[400px]">
           <div className="flex justify-between">
             <Link href={`/${post.users.username}`}>
               <div>{post.users.username}</div>

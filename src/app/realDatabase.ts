@@ -6,7 +6,7 @@ import { eq } from "drizzle-orm";
 
 const postQuery = db.select().from(postsTable).innerJoin(usersTable, eq(usersTable.id, postsTable.userId)).leftJoin(mediaTable, eq(mediaTable.id, postsTable.id));
 export function getPosts() {
-  return postQuery;
+  return postQuery.execute();
 }
 // Dynamic getPostsByUser function
 export function getPostsByUser(username: string) {
