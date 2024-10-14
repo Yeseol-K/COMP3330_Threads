@@ -1,4 +1,4 @@
-import FeedPost from "@/app/components/feed-post";
+import FeedPost from "../../../components/feed-post";
 import { getPosts } from "@/app/realDatabase";
 import NotFound from "./not-found";
 

@@ -8,6 +8,13 @@
       "when": 1726966038761,
       "tag": "0000_thick_wonder_man",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1728933002164,
+      "tag": "0001_demonic_hammerhead",
+      "breakpoints": true
     }
   ]
 }

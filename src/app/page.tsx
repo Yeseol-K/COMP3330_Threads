@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import * as fakeDatabase from "./fakeDatabase";
-import FeedPost from "./components/feed-post";
+import FeedPost from "../components/feed-post";
 import { db } from "../db";
 import { posts } from "../db/schema/schema";
 import { getPosts } from "./realDatabase";

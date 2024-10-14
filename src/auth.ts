@@ -3,7 +3,7 @@ import GitHub from "next-auth/providers/GitHub";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "@/db";
 
-export const authConfig = {
+export const { handlers, auth, signOut } = NextAuth({
   providers: [GitHub],
   adapter: DrizzleAdapter(db),
   callbacks: {
@@ -12,6 +12,4 @@ export const authConfig = {
       return session;
     },
   },
-} satisfies NextAuthConfig;
-
-export const { handlers, auth, signOut } = NextAuth(authConfig);
+});

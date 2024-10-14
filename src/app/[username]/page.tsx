@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 // import * as fakeDatabase from "../fakeDatabase";
 import Image from "next/image";
 import Link from "next/link";
-import FeedPost from "../components/feed-post";
+import FeedPost from "../../components/feed-post";
 import { db } from "@/db";
 import { getUser, getPostsByUser } from "../realDatabase";
 import { type PostResult as Post } from "@/app/realDatabase";
@@ -16,26 +16,25 @@ export default async function Profile({ params }: { params: { username: string }
   }
   // const posts = fakeDatabase.getPostsForUser(user.username);
   const posts = await getPostsByUser(params.username).execute();
+
   return (
     <>
       {/* user profile */}
       <div className="flex justify-between">
         <div>
-          <h2 className="text-3xl font-semibold">
-            {user[0].firstName} {user[0].lastName}
-          </h2>
-          <div>{user[0].username}</div>
+          <h2 className="text-3xl font-semibold">{user[0].name}</h2>
+          <div>{user[0].name}</div>
         </div>
-        <Link href={user[0].avatar}>
+        <Link href={user[0].image || "/default-profile.png"}>
           <div className="rounded-full h-20 w-20 overflow-hidden relative">
-            <Image className="object-cover" src={user[0].avatar} alt={user[0].username} quality={100} priority={true} fill={true} />
+            <Image className="object-cover" src={user[0].image || "/default-profile.png"} alt={user[0].name || "user profile image"} quality={100} priority={true} fill={true} />
           </div>
         </Link>
       </div>
       {/* user's posts */}
-      <div className="mt-10">
+      {/* <div className="mt-10">
         <div className="text-neutral-600 dark:text-neutral-400">{user[0].followers} followers</div>
-      </div>
+      </div> */}
 
       <div className="mt-7">
         <div className="w-full border-b mb-5">
